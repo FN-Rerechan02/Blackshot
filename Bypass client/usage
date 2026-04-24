@@ -1,0 +1,16 @@
+#include "SilentJack2-Client.hpp"
+    #include <iostream>
+     
+    int main() {
+    	SilentJack sj;
+    	sj.Init();
+    	sj.GetHandle(L"DayZ_x64.exe");
+     
+    	DWORD64 world = 0;
+    	sj.qRVM(0x121C5F0, &world, sizeof(DWORD64));
+     
+    	cout << "World @ 0x" << hex << world << endl;
+     
+    	system("pause");
+        return EXIT_SUCCESS;
+    }
