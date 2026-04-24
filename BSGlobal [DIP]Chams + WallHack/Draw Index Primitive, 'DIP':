@@ -1,0 +1,29 @@
+HRESULT WINAPI DrawIndexedPrimitive(LPDIRECT3DDEVICE9 pDevice, D3DPRIMITIVETYPE A, INT B, UINT C, UINT D, UINT E, UINT F)
+{
+          LPDIRECT3DVERTEXBUFFER9 Stream_Data;
+          UINT m_Stride; UINT OffsetsInBytes;
+	if (pDevice->GetStreamSource(NULL, &Stream_Data, &OffsetsInBytes, &m_Stride) == D3D_OK) { Stream_Data->Release(); }
+	
+	if (WallHacker)
+	{
+		if ((DWORD)_ReturnAddress() >= 0x785691 && (DWORD)_ReturnAddress() <= 0x785691)
+		{
+			pDevice->SetRenderState(D3DRS_ZENABLE, FALSE);
+			oDrawIndexedPrimitive(pDevice, A, B, C, D, E, F);
+			pDevice->SetRenderState(D3DRS_ZENABLE, TRUE);
+		}
+	}
+	
+	if (ChamsColor)
+	{
+		if ((DWORD)_ReturnAddress() >= 0x785691 && (DWORD)_ReturnAddress() <= 0x785691)
+		{
+			pDevice->SetRenderState(D3DRS_ZENABLE, FALSE);
+			pDevice->SetTexture(NULL, tRed);
+			oDrawIndexedPrimitive(pDevice, A, B, C, D, E, F);
+			pDevice->SetRenderState(D3DRS_ZENABLE, TRUE);
+			pDevice->SetTexture(NULL, tGreen);
+		}
+	}
+	return oDrawIndexedPrimitive(pDevice, A, B, C, D, E, F);
+}
