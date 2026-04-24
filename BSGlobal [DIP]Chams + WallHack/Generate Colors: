@@ -1,0 +1,2 @@
+GenerateTexture(pDevice, &tRed, D3DCOLOR_ARGB(255, 255, 0, 0));
+GenerateTexture(pDevice, &tGreen, D3DCOLOR_ARGB(255, 0, 255, 0));
