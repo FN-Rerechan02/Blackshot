@@ -1,0 +1,11 @@
+Smoke :    Stride -> 36
+LittleHelpGuyBody: Stride -> 48
+PlayerBody:    Stride -> 60 ( Hair & Backpack ) Stride -> 68 ( Face ) Stride -> 76 ( Body )
+Weapon : Stride -> 32
+Tank ( Part of ) : Stride -> 28
+NV -> 58 & 236 & 250 & 437
+PC -> 82 & 296 & 384 & 729
+36 => square under the player
+40 => my gun
+56 => my player
+72 => all players chams
