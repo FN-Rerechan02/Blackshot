@@ -1,0 +1,1 @@
+oDrawIndexedPrimitive = (tDrawIndexedPrimitive)DetourCreate((PBYTE)vTable[82], (PBYTE)&DrawIndexedPrimitive, 5/*Detour len*/);
